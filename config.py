@@ -3,23 +3,30 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 DATASET_PATH = BASE_DIR / "data" / "Ship_Performance_Dataset.csv"
-MODEL_PATH = BASE_DIR / "models" / "efficiency_model.pkl"
+MODEL_PATH = BASE_DIR / "models" / "artifacts" / "efficiency_model.joblib"
+MODEL_METADATA_PATH = BASE_DIR / "models" / "artifacts" / "model_metadata.json"
 OUTPUT_DIR = BASE_DIR / "outputs"
 RANDOM_SEED = 42
 
 TARGET_COLUMN = "Efficiency_nm_per_kWh"
 FEATURE_COLUMNS = [
-    "Ship_Type", "Engine_Type", "Speed_Over_Ground_knots", "Distance_Traveled_nm",
-    "Cargo_Weight_tons", "Average_Load_Percentage", "Engine_Power_kW", "Draft_meters",
-    "Weather_Condition", "Seasonal_Impact_Score", "Route_Type", "Maintenance_Status",
-    "Weekly_Voyage_Count",
+    "Ship_Type", "Route_Type", "Engine_Type", "Maintenance_Status", "Weather_Condition",
+    "Speed_Over_Ground_knots", "Engine_Power_kW", "Distance_Traveled_nm", "Draft_meters",
+    "Cargo_Weight_tons", "Operational_Cost_USD", "Revenue_per_Voyage_USD",
+    "Turnaround_Time_hours", "Seasonal_Impact_Score", "Weekly_Voyage_Count",
+    "Average_Load_Percentage",
 ]
 NUMERIC_FEATURES = [
-    "Speed_Over_Ground_knots", "Distance_Traveled_nm", "Cargo_Weight_tons",
-    "Average_Load_Percentage", "Engine_Power_kW", "Draft_meters",
-    "Seasonal_Impact_Score", "Weekly_Voyage_Count",
+    "Speed_Over_Ground_knots", "Engine_Power_kW", "Distance_Traveled_nm", "Draft_meters",
+    "Cargo_Weight_tons", "Operational_Cost_USD", "Revenue_per_Voyage_USD",
+    "Turnaround_Time_hours", "Seasonal_Impact_Score", "Weekly_Voyage_Count",
+    "Average_Load_Percentage",
 ]
-CATEGORICAL_FEATURES = [x for x in FEATURE_COLUMNS if x not in NUMERIC_FEATURES]
+CATEGORICAL_FEATURES = ["Ship_Type", "Route_Type", "Engine_Type", "Maintenance_Status", "Weather_Condition"]
+ENGINEERED_NUMERIC_FEATURES = [
+    "Power_Speed_Product", "Power_Load_Product", "Speed_Squared",
+    "Distance_Per_Turnaround_Hour", "Power_Per_Cargo_Ton",
+]
 
 DEFAULT_WEIGHTS = {"cost": 0.35, "emissions": 0.35, "energy": 0.20, "schedule": 0.10}
 MIN_SPEED_KNOTS, MAX_SPEED_KNOTS = 5.0, 25.0
