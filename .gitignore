@@ -9,3 +9,4 @@ models/*.pkl
 models/artifacts/
 outputs/*.json
 outputs/*.csv
+data/Ship_Performance_Dataset_REAL.csv
