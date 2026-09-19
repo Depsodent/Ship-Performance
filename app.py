@@ -159,4 +159,5 @@ if result:
         st.plotly_chart(px.line(y=r["convergence_history"], labels={"x":"Iteration / evaluation", "y":"Best objective"}, title=f"{name} convergence"), use_container_width=True)
     if len(result) == 2:
         table = pd.DataFrame([{ "Algorithm": k, "Objective": v["objective"], "Cost": v["cost_usd"], "CO₂": v["operational_co2_kg"], "Runtime s": v["runtime_seconds"]} for k,v in result.items()])
-        st.dataframe(table, use_container_width=True); st.plotly_chart(px.scatter(table, x="Cost", y="CO₂", text="Algorithm", title="Cost–emissions trade-off"), use_container_width=True)
+        st.dataframe(table, use_container_width=True)
+        st.plotly_chart(px.bar(table, x="Algorithm", y="Runtime s", text_auto=".4f", title="Benchmark Runtime Comparison"), use_container_width=True)
