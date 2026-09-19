@@ -1,0 +1,185 @@
+{
+  "dataset_profile": "auto",
+  "selected_model": "RandomForestRegressor",
+  "dataset_path": "C:\\Users\\AARYAN DESHPANDE\\OneDrive\\Documents\\ChatGPT\\sih ps 138\\data\\Ship_Performance_Dataset.csv",
+  "rows": 200000,
+  "dataset_columns": 7,
+  "target_column": "Fuel consumption",
+  "feature_columns": [
+    "m (kg)",
+    "Mt",
+    "Ft",
+    "Fm",
+    "ec (cm3)",
+    "ep (KW)"
+  ],
+  "numeric_features": [
+    "m (kg)",
+    "Mt",
+    "ec (cm3)",
+    "ep (KW)"
+  ],
+  "engineered_numeric_features": [
+    "Power_per_Mass",
+    "Power_per_Test_Mass",
+    "Power_per_Engine_Capacity",
+    "Mass_per_Power",
+    "Engine_Capacity_per_Mass"
+  ],
+  "categorical_features": [
+    "Ft",
+    "Fm"
+  ],
+  "test_size": 0.2,
+  "random_state": 42,
+  "cv_folds": 5,
+  "CV_MAE_mean": 0.08385207926400384,
+  "CV_MAE_std": 0.0009278171562901122,
+  "CV_RMSE_mean": 0.24396969499319754,
+  "CV_RMSE_std": 0.019008566202355196,
+  "CV_R2_mean": 0.9813522750947076,
+  "CV_R2_std": 0.002911407596514307,
+  "test_MAE": 0.08186044208210606,
+  "test_RMSE": 0.22658150576688546,
+  "test_R2": 0.9837815911557508,
+  "MAE": 0.08186044208210606,
+  "RMSE": 0.22658150576688546,
+  "R2": 0.9837815911557508,
+  "model_comparison": [
+    {
+      "Model": "DummyRegressor (mean)",
+      "status": "completed",
+      "CV_MAE_mean": 1.1308289234082032,
+      "CV_MAE_std": 0.0035645592952069736,
+      "CV_RMSE_mean": 1.7913890755670512,
+      "CV_RMSE_std": 0.0074760872081069294,
+      "CV_R2_mean": -3.04049704453746e-06,
+      "CV_R2_std": 4.22782260824905e-06,
+      "training_seconds": 1.8998572000000422
+    },
+    {
+      "Model": "LinearRegression",
+      "status": "completed",
+      "CV_MAE_mean": 0.43841240951676347,
+      "CV_MAE_std": 0.0028113853037519897,
+      "CV_RMSE_mean": 0.6272381374694754,
+      "CV_RMSE_std": 0.01259031005480484,
+      "CV_R2_mean": 0.8773747053284054,
+      "CV_R2_std": 0.004260733204286061,
+      "training_seconds": 2.1337671999999657
+    },
+    {
+      "Model": "Ridge",
+      "status": "completed",
+      "CV_MAE_mean": 0.4443299972615363,
+      "CV_MAE_std": 0.002551271595833322,
+      "CV_RMSE_mean": 0.6341959533060215,
+      "CV_RMSE_std": 0.012059041056034408,
+      "CV_R2_mean": 0.8746431779214966,
+      "CV_R2_std": 0.0040776282168079195,
+      "training_seconds": 1.8864118000001326
+    },
+    {
+      "Model": "RandomForestRegressor",
+      "status": "completed",
+      "CV_MAE_mean": 0.08385207926400384,
+      "CV_MAE_std": 0.0009278171562901122,
+      "CV_RMSE_mean": 0.24396969499319754,
+      "CV_RMSE_std": 0.019008566202355196,
+      "CV_R2_mean": 0.9813522750947076,
+      "CV_R2_std": 0.002911407596514307,
+      "training_seconds": 588.3489685000004
+    },
+    {
+      "Model": "ExtraTreesRegressor",
+      "status": "completed",
+      "CV_MAE_mean": 0.08092814790131517,
+      "CV_MAE_std": 0.0012767600794661048,
+      "CV_RMSE_mean": 0.2468184759152648,
+      "CV_RMSE_std": 0.019346952712049177,
+      "CV_R2_mean": 0.9809122553688215,
+      "CV_R2_std": 0.0030109940088392383,
+      "training_seconds": 540.6818686000006
+    },
+    {
+      "Model": "HistGradientBoostingRegressor",
+      "status": "completed",
+      "CV_MAE_mean": 0.18842861991771603,
+      "CV_MAE_std": 0.0007859555914656096,
+      "CV_RMSE_mean": 0.3223971594257462,
+      "CV_RMSE_std": 0.014288246653384061,
+      "CV_R2_mean": 0.9675601903356903,
+      "CV_R2_std": 0.0027628692755447565,
+      "training_seconds": 6.906566399999974
+    },
+    {
+      "Model": "GradientBoostingRegressor",
+      "status": "completed",
+      "CV_MAE_mean": 0.3022466494465721,
+      "CV_MAE_std": 0.0012653204060273796,
+      "CV_RMSE_mean": 0.45137390076739353,
+      "CV_RMSE_std": 0.011806002347131896,
+      "CV_R2_mean": 0.9364814238281175,
+      "CV_R2_std": 0.0030514276638424626,
+      "training_seconds": 121.91591050000079
+    }
+  ],
+  "comparison_path": "outputs\\model_cv_results.csv",
+  "training_timestamp_utc": "2026-09-19T06:59:34.618634+00:00",
+  "model_path": "C:\\Users\\AARYAN DESHPANDE\\OneDrive\\Documents\\ChatGPT\\sih ps 138\\models\\artifacts\\efficiency_model.joblib",
+  "dataset_investigation": {
+    "profile": "auto",
+    "missing_values": {
+      "m (kg)": 8,
+      "Mt": 3625,
+      "Ft": 0,
+      "Fm": 0,
+      "ec (cm3)": 7,
+      "ep (KW)": 0,
+      "Fuel consumption": 0
+    },
+    "duplicate_rows": 133131,
+    "target_distribution": {
+      "count": 200000.0,
+      "mean": 5.4116135,
+      "std": 1.7889721850060005,
+      "min": 0.2,
+      "25%": 4.9,
+      "50%": 5.5,
+      "75%": 6.1,
+      "max": 29.0
+    },
+    "numeric_feature_target_correlations": {
+      "m (kg)": -0.057866220222561916,
+      "Mt": -0.03383024278181889,
+      "ec (cm3)": 0.1964603181836243,
+      "ep (KW)": 0.3144320407412214
+    },
+    "engineered_feature_target_correlations": {
+      "Power_per_Mass": 0.44469374966894176,
+      "Power_per_Test_Mass": 0.43178904635782106,
+      "Power_per_Engine_Capacity": 0.21813898144620983,
+      "Mass_per_Power": -0.33938495986670786,
+      "Engine_Capacity_per_Mass": 0.27373288925912753
+    },
+    "categorical_distributions": {
+      "Ft": {
+        "PETROL": 131614,
+        "DIESEL": 41257,
+        "PETROL/ELECTRIC": 18202,
+        "LPG": 6867,
+        "E85": 1227,
+        "DIESEL/ELECTRIC": 662,
+        "NG": 164,
+        "HYDROGEN": 7
+      },
+      "Fm": {
+        "M": 113533,
+        "H": 60526,
+        "P": 18864,
+        "B": 6888,
+        "F": 189
+      }
+    }
+  }
+}

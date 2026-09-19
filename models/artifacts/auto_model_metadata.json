@@ -1,0 +1,35 @@
+{
+  "dataset": "data\\Auto_MPG_Fuel_Efficiency_Unique.csv",
+  "rows": 66869,
+  "target": "Fuel consumption",
+  "numeric_features": [
+    "m (kg)",
+    "Mt",
+    "ec (cm3)",
+    "ep (KW)"
+  ],
+  "categorical_features": [
+    "Ft",
+    "Fm"
+  ],
+  "excluded_features": [
+    "Ewltp (g/km)",
+    "Erwltp (g/km)",
+    "z (Wh/km)",
+    "Electric range (km)",
+    "r"
+  ],
+  "test_size": 0.2,
+  "cv_folds": 5,
+  "random_state": 42,
+  "selected_model": "RandomForestRegressor",
+  "CV_MAE_mean": 0.1684291097574612,
+  "CV_RMSE_mean": 0.35768151351144906,
+  "CV_R2_mean": 0.9719527614844508,
+  "test_MAE": 0.16648338201641075,
+  "test_RMSE": 0.4220769502553976,
+  "test_R2": 0.9617912258523263,
+  "model_path": "models\\artifacts\\auto_fuel_model.joblib",
+  "cv_results_path": "outputs\\auto_model_cv_results.csv",
+  "training_timestamp_utc": "2026-09-18T07:56:38.583596+00:00"
+}

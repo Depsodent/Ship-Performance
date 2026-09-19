@@ -1,0 +1,13 @@
+{
+  "model": "RandomForestRegressor",
+  "MAE": 0.3559465062145079,
+  "RMSE": 0.4219323571207032,
+  "R2": -0.13756046078232087,
+  "training_seconds": 0.24275530000068102,
+  "model_path": "C:\\Users\\AARYAN DESHPANDE\\OneDrive\\Documents\\ChatGPT\\sih ps 138\\models\\artifacts\\test_efficiency_model.joblib",
+  "dataset_path": "C:\\Users\\AARYAN DESHPANDE\\OneDrive\\Documents\\ChatGPT\\sih ps 138\\data\\Ship_Performance_Dataset.csv",
+  "rows": 2736,
+  "features": 13,
+  "target": "Efficiency_nm_per_kWh",
+  "dataset_columns": 18
+}
