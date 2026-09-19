@@ -107,14 +107,8 @@ with st.sidebar:
 st.info("Scientific honesty: efficiency is the observed ML target. Energy and fuel outputs are derived calculations; every fuel parameter is a clearly labelled DEMO ASSUMPTION.")
 if not MODEL_PATH.exists():
     st.warning("Model not trained yet. Train it below or run `python experiments/train_model.py` from the project root.")
-if st.button("Retrain ML Model"):
-    try:
-        with st.spinner("Training the complete preprocessing + Random Forest pipeline using the real CSV..."):
-            metrics = train_model(DATASET_PATH)
-        st.success(f"Selected {metrics['selected_model']} using {metrics['rows']} real dataset rows and saved it to {metrics['model_path']}.")
-        st.caption(f"MAE: {metrics['MAE']:.4f} · RMSE: {metrics['RMSE']:.4f} · R²: {metrics['R2']:.4f}")
-    except (FileNotFoundError, ValueError) as error:
-        st.error(str(error))
+# Model retraining is kept as a local development operation.
+
 if st.button("Predict Fuel Consumption", type="primary"):
     try:
         fuel_consumption = predict_efficiency(auto_values)
